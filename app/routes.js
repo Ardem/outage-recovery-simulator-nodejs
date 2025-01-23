@@ -11,7 +11,7 @@ router.get('/user/:userid', (req, res) => {
     return;
   }
 
-  db.get("SELECT * FROM users WHERE id = ?", [userid], (err, row) => {
+  db.get("SELECT * FROM players WHERE id = ?", [userid], (err, row) => {
     db.close();
     if (err) {
       return res.status(500).json({ error: 'Database error' });
